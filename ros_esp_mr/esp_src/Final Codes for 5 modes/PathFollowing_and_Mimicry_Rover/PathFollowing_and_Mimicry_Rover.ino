@@ -518,7 +518,6 @@ void movement_Inst_Fwd(void) {
 
     digitalWrite(R_F_BACK, LOW);
     digitalWrite(L_F_BACK, LOW);
-//    delay(500);
 
 }
 
@@ -531,9 +530,6 @@ void movement_Inst_Lft(void) {
     digitalWrite(R_F_BACK, LOW);
     digitalWrite(L_F_BACK, LOW);
     
-
- //   delay(500);
-  // NOTE: The minimum delay for RIGHT/LEFT movement is 1S(inluding .5s ON time & .5s OFF time). Hence subtract 1s before repeating this movement
 }
 
 void movement_Inst_Rgt(void) {
@@ -545,9 +541,6 @@ void movement_Inst_Rgt(void) {
     digitalWrite(R_F_BACK, LOW);
     digitalWrite(L_F_BACK, LOW);
 
- //   delay(500);
-  // NOTE: The minimum delay for RIGHT/LEFT movement is 1S(inluding .5s ON time & .5s OFF time). Hence subtract 1s before repeating this movement 
-
 }
 
 void movement_Inst_Bwd(void) {
@@ -555,19 +548,9 @@ void movement_Inst_Bwd(void) {
     Serial.println("Going_Backward"); 
     digitalWrite(R_F_FORW, LOW);
     digitalWrite(L_F_FORW, LOW);
-//    digitalWrite(R_M_FORW, LOW);
-//    digitalWrite(L_M_FORW, LOW);
-//    digitalWrite(R_B_FORW, LOW);
-//    digitalWrite(L_B_FORW, LOW);
-
 
     digitalWrite(R_F_BACK, HIGH);
     digitalWrite(L_F_BACK, HIGH);
-//    digitalWrite(R_M_BACK, HIGH);
-//    digitalWrite(L_M_BACK, HIGH);
-//    digitalWrite(R_B_BACK, HIGH);
-//    digitalWrite(L_B_BACK, HIGH);
-//    delay(500);
 }
 
 void movement_Inst_Stp(void) {
