@@ -11,6 +11,12 @@ We have designed 2 rovers with 5 modes collectively, 2 of which work over WiFi a
 * ROS control via WiFi
 * Path Memorization and Mimicry
 
+## Rover Design and Hardware
+
+The rover is designed such that is has multi-terrain off-roading capability through a 6-wheel drive chassis having a unique design. 
+
+![Rover](https://github.com/[AryamanDubey00]/[ros_esp_mr]/blob/[img]/image.png?raw=true)
+
 ## HandFollowing Mode 
 
 ### Arduino Bluetooth Controlled Car
