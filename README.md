@@ -1,6 +1,6 @@
 # Quick Overview
 
-A summer internship project done by Aryaman Dubey (6th Semester) and Sanjay K N (4th Semester) of PES University in the Center for IoT under the Guidance of Dr. Adithya B.
+A summer internship project done together by Aryaman Dubey and Sanjay K N of PES University in the Center for IoT under the Guidance of Dr. Adithya B.
 
 We have designed 2 rovers with 5 modes collectively, 2 of which work over WiFi and 3 of which work over BlueTooth. The modes are as follows:
 
