@@ -60,7 +60,60 @@ Upload the BT + ROS code from this repo found in the [final codes](https://githu
 
 ## HandFollowing Mode 
 
-### Arduino Bluetooth Controlled Car
+### Features
+
+* Hand Following
+* Remote Control Through Mobile App
+* Accelerometer Control
+* Gesture Control
+
+### Hardware Components
+
+![Handfollow Rover](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/handfollow1.jpeg)
+
+### Components
+
+1. 4-WHEEL CHASSIS (WITH MOTORS & BATTERY PACK)
+2. ARDUINO UNO
+3. ARDUINO CABLE
+4. L293D MOTOR SHIELD
+5. ULTRASONIC SENSOR
+6. IR SENSORS x 2
+7. SET OF JUMPERWIRES 
+8. SWITCH FOR THE BATTERY
+
+### Assembly
+
+1.	Solder wires to the motors.
+2.	Build the chassis & mount the motors onto it.
+3.	Connect the wires from the motors to the L293D motor driver
+4.	Mount the Arduino board, HC-05 module, switch, battery pack and the sensors as shown in the pictures.
+5.	Connect the motor driver to the Arduino.
+6.	Connect the power supply to a switch & connect the terminals from the switch on to the L293D motor driver 
+7.	Connect the sensors & the HC-05 module to the analog pins on the motor driver using jumper wires.
+
+![Handfollow Rover](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/handfollow2.jpeg)
+![Handfollow Rover](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/handfollow3.jpeg)
+
+### Setup
+
+*	Download an Arduino ide for editing and uploading the code onto the board.
+*	Install the required libraries and compile the code.
+*	Upload the code to Arduino via the Arduino Uno cable.
+*	Install the free “Bluetooth RC Controller” Application.
+
+### Operating Instructions
+
+*	Open the Applications and connect to the HC-05 Bluetooth module.
+*	Drive the robot using arrow keys.
+*	Press Parking Light button on the Application to put the robot into handfollow mode.
+*	Open settings and press on Gesture control for controlling your robot using gestures
+
+### Interface
+
+![Interface for Bluetooth](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/btinter.jpeg)
+
+### Notes
 
 Before uploading the code you have to install the necessary library. AFMotor Library https://learn.adafruit.com/adafruit-motor-shield/library-install 
 
