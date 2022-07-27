@@ -1,7 +1,6 @@
-# ros_esp_mr
-Course workflow for ROS ESP32 interface in a mobile robot
+# Quick Overview
 
-## Quick Overview
+A summer internship project done by Aryaman Dubey (6th Semester) and Sanjay K N (4th Semester) of PES University in the Center for IoT under the Guidance of Dr. Adithya B.
 
 We have designed 2 rovers with 5 modes collectively, 2 of which work over WiFi and 3 of which work over BlueTooth. The modes are as follows:
 
@@ -11,7 +10,7 @@ We have designed 2 rovers with 5 modes collectively, 2 of which work over WiFi a
 * ROS control via WiFi
 * Path Memorization and Mimicry
 
-## HandFollowing Robot
+# HandFollowing Robot
 
 ### Features
 
@@ -76,7 +75,7 @@ Now You Can Upload the Code without any problem but make sure the bt module isn'
 
 Note - Disconnect the Bluetooth Module before hiting the upload button otherwise you'll get compilation error message.
 
-## Multi-Terrain Rover with WiFi, BlueTooth, ROS, Path Memorization/Mimicry 
+# Multi-Terrain Rover with WiFi, BlueTooth, ROS, Path Memorization/Mimicry 
 
 ### Rover Design and Hardware
 
