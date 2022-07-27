@@ -11,54 +11,7 @@ We have designed 2 rovers with 5 modes collectively, 2 of which work over WiFi a
 * ROS control via WiFi
 * Path Memorization and Mimicry
 
-## Rover Design and Hardware
-
-The rover is designed such that is has multi-terrain off-roading capability through a 6-wheel drive chassis having a unique design. 
-
-![Rover](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/image.png)
-
-The design has a pair of rotatable front wheels which help in navigating off-road uneven terrain and handling verticality.
-
-### Hardware Components
-
-* 6-WHEEL ROVER CHASSIS (WITH MOTORS)
-* ESP 32 DOIT DEVKIT V1(WIFI & BLUETOOTH MODULE)
-* ESP32 CABLE
-* 12V BATTERY PACK (for powering the motors)
-* 10,400mAh POWER BANK (for powering the ESP 32)
-* SET OF JUMPERWIRES 
-* SWITCH FOR THE BATTERY
-* L298N MOTOR DRIVERS x 3(for 6 motors)
-* HARD WIRES FOR CONNECTING THE MOTORS TO THE DRIVERS
-* BREAD BOARD MINI
-
-### Setup
-
-INSTRUCTIONS: 
-
-1.	Solder wires to the motors.
-2.	Build the chassis & mount the motors on to it.
-3.	Connect the wires from the motors to the L298N motor drivers
-4.	Mount a bread board, switch, power bank, 12v power supply and the motor drivers on the chassis.
-5.	Fix your ESP32 on the bread board.
-6.	Connect the motor driver pins in parallel to the ESP 32 on the bread board
-7.	Connect the 12v power supply to a switch & connect the terminals from the switch on to the bread board
-8.	Connect the Voltage pins and the ground pins in parallel with the terminals from the switch
-9.	Power up the ESP32 by connecting it to the power bank
-
-## Bluetooth Control Mode
-
-### Bluetooth Setup and Interface
-
-*	Install the free “Arduino Joystick” Application.
-*	Connect to the ESP32 board when ready.
-
-![App Interface Main](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/app1.jpeg)
-![App Interface Setup](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/app2.jpeg)
-
-Upload the BT + ROS code from this repo found in the [final codes](https://github.com/AryamanDubey00/ros_esp_mr/tree/main/ros_esp_mr/esp_src/Final%20Codes%20for%205%20modes) subfolder
-
-## HandFollowing Mode 
+## HandFollowing Robot
 
 ### Features
 
@@ -122,6 +75,55 @@ After downloading the library open Arduino IDE >> go to sketch >> Include Libray
 Now You Can Upload the Code without any problem but make sure the bt module isn't connected with Arduino while uploading code
 
 Note - Disconnect the Bluetooth Module before hiting the upload button otherwise you'll get compilation error message.
+
+## Multi-Terrain Rover with WiFi, BlueTooth, ROS, Path Memorization/Mimicry 
+
+### Rover Design and Hardware
+
+The rover is designed such that is has multi-terrain off-roading capability through a 6-wheel drive chassis having a unique design. 
+
+![Rover](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/image.png)
+
+The design has a pair of rotatable front wheels which help in navigating off-road uneven terrain and handling verticality.
+
+### Hardware Components
+
+* 6-WHEEL ROVER CHASSIS (WITH MOTORS)
+* ESP 32 DOIT DEVKIT V1(WIFI & BLUETOOTH MODULE)
+* ESP32 CABLE
+* 12V BATTERY PACK (for powering the motors)
+* 10,400mAh POWER BANK (for powering the ESP 32)
+* SET OF JUMPERWIRES 
+* SWITCH FOR THE BATTERY
+* L298N MOTOR DRIVERS x 3(for 6 motors)
+* HARD WIRES FOR CONNECTING THE MOTORS TO THE DRIVERS
+* BREAD BOARD MINI
+
+### Setup
+
+INSTRUCTIONS: 
+
+1.	Solder wires to the motors.
+2.	Build the chassis & mount the motors on to it.
+3.	Connect the wires from the motors to the L298N motor drivers
+4.	Mount a bread board, switch, power bank, 12v power supply and the motor drivers on the chassis.
+5.	Fix your ESP32 on the bread board.
+6.	Connect the motor driver pins in parallel to the ESP 32 on the bread board
+7.	Connect the 12v power supply to a switch & connect the terminals from the switch on to the bread board
+8.	Connect the Voltage pins and the ground pins in parallel with the terminals from the switch
+9.	Power up the ESP32 by connecting it to the power bank
+
+## Bluetooth Control Mode
+
+### Bluetooth Setup and Interface
+
+*	Install the free “Arduino Joystick” Application.
+*	Connect to the ESP32 board when ready.
+
+![App Interface Main](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/app1.jpeg)
+![App Interface Setup](https://github.com/AryamanDubey00/ros_esp_mr/blob/main/img/app2.jpeg)
+
+Upload the BT + ROS code from this repo found in the [final codes](https://github.com/AryamanDubey00/ros_esp_mr/tree/main/ros_esp_mr/esp_src/Final%20Codes%20for%205%20modes) subfolder
 
 ## WiFi Control 
 
