@@ -154,8 +154,11 @@ ROS is an open-source framework for developers to create SW for robots working o
 Make sure that in the code, you replace the IP/WiFi settings with your own.
 
 IPAddress server(IP address ex. “192.168.20.5”);
+
 uint16_t serverPort = 11411;  //This can be left alone.
+
 const char*  ssid = "your network name";
+
 const char*  password = "your password";
 
 You will need to set up at least 3 terminals to operate this mode, in this specific order.
