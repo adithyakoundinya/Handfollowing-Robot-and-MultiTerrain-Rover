@@ -17,20 +17,6 @@ const uint8_t R_F_FORW = 32;
 const uint8_t L_F_PWM = 13;
 const uint8_t L_F_BACK = 25;
 const uint8_t L_F_FORW = 26;
-//
-//const uint8_t R_B_BACK = 14;
-//const uint8_t R_B_FORW = 27;
-//
-//const uint8_t L_B_BACK = 32;
-//const uint8_t L_B_FORW = 33;
-//
-//
-//const uint8_t R_M_BACK = 22;
-//const uint8_t R_M_FORW = 23;
-//
-//const uint8_t L_M_BACK = 5;
-//const uint8_t L_M_FORW = 18;
-
 
 const uint8_t channel_L =0;
 const uint8_t channel_R= 1;
@@ -43,10 +29,10 @@ float left_wheel;
 float right_wheel;
 
 
-IPAddress server(192, 168, 130, 15);
+IPAddress server("Ip address ex: 192.168.38.24);
 uint16_t serverPort = 11411;
-const char*  ssid = "Sanjay's device";
-const char*  password = "lightweight";
+const char*  ssid = "device wifi network";
+const char*  password = "device wifi network password";
 
 void cmdVel_to_pwm_cb( const geometry_msgs::Twist& velocity_msg);
 ros::NodeHandle  nh;
@@ -58,7 +44,7 @@ char command;
 
 void setup(){
     Serial.begin(115200);
-    SerialBT.begin("ESP32");
+    SerialBT.begin("ESP32_BT_ROS_ROVER");
     setupWiFi();
 
     nh.getHardware()->setConnection(server, serverPort);
@@ -71,80 +57,37 @@ void setup(){
 
 void forward(){
 
-   
     digitalWrite(R_F_FORW, HIGH);
     digitalWrite(L_F_FORW, HIGH);
-//    digitalWrite(R_M_FORW, HIGH);
-//    digitalWrite(L_M_FORW, HIGH);
-//    digitalWrite(R_B_FORW, HIGH);
-//    digitalWrite(L_B_FORW, HIGH);
-// 
- 
     digitalWrite(R_F_BACK, LOW);
     digitalWrite(L_F_BACK, LOW);
-//    digitalWrite(R_M_BACK, LOW);
-//    digitalWrite(L_M_BACK, LOW);
-//    digitalWrite(R_B_BACK, LOW);
-//    digitalWrite(L_B_BACK, LOW);
- 
+
 }
 
 void back(){
 
     digitalWrite(R_F_FORW, LOW);
     digitalWrite(L_F_FORW, LOW);
-//    digitalWrite(R_M_FORW, LOW);
-//    digitalWrite(L_M_FORW, LOW);
-//    digitalWrite(R_B_FORW, LOW);
-//    digitalWrite(L_B_FORW, LOW);
-
-
     digitalWrite(R_F_BACK, HIGH);
     digitalWrite(L_F_BACK, HIGH);
-//    digitalWrite(R_M_BACK, HIGH);
-//    digitalWrite(L_M_BACK, HIGH);
-//    digitalWrite(R_B_BACK, HIGH);
-//    digitalWrite(L_B_BACK, HIGH);
 
 }
 
 void right(){
 
-
     digitalWrite(R_F_FORW, LOW);
     digitalWrite(L_F_FORW, HIGH);
-//    digitalWrite(R_M_FORW, LOW);
-//    digitalWrite(L_M_FORW, HIGH);
-//    digitalWrite(R_B_FORW, LOW);
-//    digitalWrite(L_B_FORW, HIGH);
-
-
     digitalWrite(R_F_BACK, HIGH);
     digitalWrite(L_F_BACK, LOW);
-//    digitalWrite(R_M_BACK, HIGH);
-//    digitalWrite(L_M_BACK, LOW);
-//    digitalWrite(R_B_BACK, HIGH);
-//    digitalWrite(L_B_BACK, LOW);
 
 }
 
 void left(){
 
-
     digitalWrite(R_F_FORW, HIGH);
     digitalWrite(L_F_FORW, LOW);
-//    digitalWrite(R_M_FORW, HIGH);
-//    digitalWrite(L_M_FORW, LOW);
-//    digitalWrite(R_B_FORW, HIGH);
-//    digitalWrite(L_B_FORW, LOW);
-
-
     digitalWrite(R_F_BACK, LOW);
     digitalWrite(L_F_BACK, HIGH);
-//    digitalWrite(R_M_BACK, LOW);
-//    digitalWrite(L_M_BACK, HIGH);
-//    digitalWrite(R_B_BACK, LOW);
-//    digitalWrite(L_B_BACK, HIGH);
 
 }
   
@@ -155,44 +98,16 @@ void Stop(){
   digitalWrite(L_F_BACK, LOW);
   digitalWrite(L_F_FORW, LOW);
   
-//  digitalWrite(R_B_BACK, LOW);
-//  digitalWrite(R_B_FORW, LOW);
-//  digitalWrite(L_B_BACK, LOW);
-//  digitalWrite(L_B_FORW, LOW);
-//
-//  digitalWrite(R_M_BACK, LOW);
-//  digitalWrite(R_M_FORW, LOW);
-//  digitalWrite(L_M_BACK, LOW);
-//  digitalWrite(L_M_FORW, LOW);
 }
 
 
 
 void direction(){
 
-
     digitalWrite(L_F_FORW, left_wheel > 0);
     digitalWrite(L_F_BACK, left_wheel < 0);
-
-//    
-//    digitalWrite(L_M_FORW, left_wheel > 0);
-//    digitalWrite(L_M_BACK, left_wheel < 0);
-//
-//
-//    digitalWrite(L_B_FORW, left_wheel > 0);
-//    digitalWrite(L_B_BACK, left_wheel < 0);
-
-
     digitalWrite(R_F_FORW, right_wheel > 0);
     digitalWrite(R_F_BACK, right_wheel < 0);
-//
-//    
-//    digitalWrite(R_M_FORW, right_wheel > 0);
-//    digitalWrite(R_M_BACK, right_wheel < 0);
-//
-//
-//    digitalWrite(R_B_FORW, right_wheel > 0);
-//    digitalWrite(R_B_BACK, right_wheel < 0);
 
 }
 
@@ -203,8 +118,6 @@ void speed (){
 
 void stop()
 {
-   
-   
    ledcWrite(channel_R, 0);  
    ledcWrite(channel_L, 0);
 }
@@ -247,14 +160,7 @@ void pin_defination(){
   //pinMode(R_F_PWM,  OUTPUT);
   pinMode(R_F_FORW, OUTPUT);
   pinMode(R_F_BACK, OUTPUT);
-//  pinMode(L_B_FORW, OUTPUT);
-//  pinMode(L_B_BACK, OUTPUT);
-//  pinMode(R_B_FORW, OUTPUT);
-//  pinMode(R_B_BACK, OUTPUT);
-//  pinMode(L_M_FORW, OUTPUT);
-//  pinMode(L_M_BACK, OUTPUT);
-//  pinMode(R_M_FORW, OUTPUT);
-//  pinMode(R_M_BACK, OUTPUT);
+
   
   ledcSetup(channel_R ,freq , res);
   ledcSetup(channel_L ,freq , res);
